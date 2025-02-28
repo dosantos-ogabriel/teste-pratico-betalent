@@ -1,0 +1,45 @@
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border-radius: 8px 8px 0 0;
+	overflow: hidden;
+
+	thead {
+		background-color: var(--blue-primary);
+		height: 47px;
+		th {
+			color: var(--white);
+			text-align: left;
+			font-family: Helvetica Neue;
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 19.54px;
+			letter-spacing: 0%;
+		}
+	}
+	tbody {
+		background-color: var(--white);
+		tr {
+			border: 1px solid var(--gray-10);
+			height: 49px;
+			@media screen and (max-width: 768px) {
+				height: 60px;
+			}
+		}
+		td {
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 19.09px;
+			letter-spacing: 0%;
+			img {
+				width: 34px;
+				height: 34px;
+				border-radius: 50%;
+			}
+		}
+	}
+	th:first-child,
+	td:first-child {
+		padding-left: 24px;
+	}
+}
