@@ -10,7 +10,6 @@ table {
 		th {
 			color: var(--white);
 			text-align: left;
-			font-family: Helvetica Neue;
 			font-weight: 500;
 			font-size: 16px;
 			line-height: 19.54px;
@@ -37,16 +36,15 @@ table {
 			}
 		}
 		.employee-data {
-			height: 0;
-			overflow: hidden;
-			transition: height 0.2s ease-in-out;
 			display: none;
 			border-top: 0;
 		}
 	}
-	th:first-child,
-	td:first-child {
-		padding-left: 24px;
+	tr:not(.employee-data) {
+		th:first-child,
+		td:first-child {
+			padding-left: 24px;
+		}
 	}
 	th:last-child,
 	td:last-child {
@@ -81,9 +79,7 @@ table {
 		}
 
 		.employee-data.expanded {
-			height: auto;
 			display: table-row;
-			width: 100%;
 			td {
 				padding: 12px 24px;
 				.data-row {
@@ -93,7 +89,6 @@ table {
 					border-bottom: 1px dashed var(--gray-10);
 
 					strong {
-						font-family: Helvetica Neue;
 						font-weight: 500;
 						font-size: 16px;
 						line-height: 19.54px;
