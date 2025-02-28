@@ -14,13 +14,13 @@ table {
 			font-weight: 500;
 			font-size: 16px;
 			line-height: 19.54px;
-			letter-spacing: 0%;
 		}
 	}
 	tbody {
 		background-color: var(--white);
 		tr {
 			border: 1px solid var(--gray-10);
+			border-bottom: 0;
 			height: 49px;
 			@media screen and (max-width: 768px) {
 				height: 60px;
@@ -30,16 +30,76 @@ table {
 			font-weight: 400;
 			font-size: 16px;
 			line-height: 19.09px;
-			letter-spacing: 0%;
 			img {
 				width: 34px;
 				height: 34px;
 				border-radius: 50%;
 			}
 		}
+		.employee-data {
+			height: 0;
+			overflow: hidden;
+			transition: height 0.2s ease-in-out;
+			display: none;
+			border-top: 0;
+		}
 	}
 	th:first-child,
 	td:first-child {
 		padding-left: 24px;
+	}
+	th:last-child,
+	td:last-child {
+		display: none;
+	}
+
+	@media screen and (max-width: 768px) {
+		th,
+		td {
+			display: none;
+			&:first-child,
+			&:nth-child(2),
+			&:last-child {
+				display: table-cell;
+			}
+		}
+		button {
+			border: 0;
+			background-color: transparent;
+			padding: 0;
+			height: 32px;
+			width: 32px;
+			img {
+				width: 32px;
+				height: 32px;
+				transform: rotate(0);
+				transition: 0.2s transform ease-in-out;
+			}
+			&.expanded img {
+				transform: rotate(-180deg);
+			}
+		}
+
+		.employee-data.expanded {
+			height: auto;
+			display: table-row;
+			width: 100%;
+			td {
+				padding: 12px 24px;
+				.data-row {
+					display: flex;
+					justify-content: space-between;
+					margin-bottom: 12px;
+					border-bottom: 1px dashed var(--gray-10);
+
+					strong {
+						font-family: Helvetica Neue;
+						font-weight: 500;
+						font-size: 16px;
+						line-height: 19.54px;
+					}
+				}
+			}
+		}
 	}
 }
