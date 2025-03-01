@@ -50,11 +50,14 @@ table {
 	th:last-child,
 	td:last-child {
 		display: none;
+		text-align: center;
 	}
 
 	@media screen and (max-width: 768px) {
-		tr {
-			height: 60px;
+		tbody {
+			tr {
+				height: 60px;
+			}
 		}
 
 		th,
@@ -68,6 +71,21 @@ table {
 			}
 		}
 
+		th:last-child {
+			position: relative;
+			&::before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-60%, -50%);
+				width: 8px;
+				height: 8px;
+				background-color: var(--white);
+				border-radius: 50%;
+			}
+		}
+
 		button {
 			background-color: transparent;
 			border: 0;
@@ -76,10 +94,10 @@ table {
 			width: 32px;
 
 			img {
-				height: 32px;
+				max-height: 32px;
 				transform: rotate(0);
 				transition: 0.2s transform ease-in-out;
-				width: 32px;
+				max-width: 32px;
 			}
 			&.expanded {
 				img {
