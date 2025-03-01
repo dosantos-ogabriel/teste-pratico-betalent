@@ -26,7 +26,7 @@ export default function TableRow({ employee, selected, onClickRow, columns }) {
 					{Object.entries(columns)
 						.slice(2)
 						.map(([key, value]) => (
-							<div className="data-row" key={key}>
+							<div className="employee-data__row" key={key}>
 								<strong>{value}</strong>
 								<span>{employee[key]}</span>
 							</div>

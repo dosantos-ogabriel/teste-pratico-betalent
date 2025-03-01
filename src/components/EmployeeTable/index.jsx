@@ -1,6 +1,6 @@
 import { useState } from "react";
 import TableRow from "./TableRow";
-import "./employee-table-style.css";
+import "./style.css";
 
 const columns = {
 	image: "Foto",
